@@ -23,7 +23,7 @@ router.post('/writeNewFile', (req, res) => {
 router.get('/getFileDetails', async (req, res) => {
     const responseObject = await service.getFileDetails(req.body);
     let output = {};
-    output.content = Buffer.from(responseObject.data.content, 'base64').toString('ascii');
+    output.content = JSON.parse(Buffer.from(responseObject.data.content, 'base64').toString('ascii'));
     output.sha = responseObject.data.sha;
     if (responseObject.status === 200 && responseObject.statusText === 'OK') {
         res.json(output);
