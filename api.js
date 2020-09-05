@@ -32,6 +32,13 @@ router.get('/getFileDetails', async (req, res) => {
     }
 });
 
+// works
+// NOTE: sha is updated only if there is a change in content, else it just keeps adding a new commit
+router.post('/updateExistingFile', (req, res) => {
+    const responseObject = service.updateExistingFile(req.body);
+    res.json(responseObject);
+});
+
 app.use('/', router);
 app.listen(process.env.PORT, () => {
     console.log("Server is listening on port " + process.env.PORT);
