@@ -1,1 +1,1 @@
-{"domainName":"myinnov","eventOutputDir":"quality-event-logging/events","region":{"build":{"ossScan":{"logEvent":"Yes","eventType":"OSS_SCAN","eventInputDir":"build/security"}}}}
+{"domainName":"myinnov","eventOutputDir":"quality-event-logging/events","region":{"build":{"ossScan":{"logEvent":"Yes","eventType":"OSS_SCAN","eventInputDir":"build/security"},"unitTest":{"logEvent":"Yes","eventType":"UNIT_TEST","eventInputDir":"build/tests"}}}}
