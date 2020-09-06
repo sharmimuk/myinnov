@@ -4,7 +4,7 @@ require('dotenv').config();
 const writeNewFile = (body) => {
     const filecontent = Buffer.from(JSON.stringify(body.content)).toString('base64');
 
-    const responseObject = axios.put(process.env.githubContentsURL + '/' + body.repository + '/contents/quality.conf.json', {}, {
+    const responseObject = axios.put(process.env.githubContentsURL + '/' + body.repository + '/contents/config.json', {}, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + process.env.token
@@ -23,7 +23,7 @@ const writeNewFile = (body) => {
 }
 
 const getFileDetails = async (body) => {
-    const responseObject = await axios.get(process.env.githubContentsURL + '/' + body.repository + '/contents/quality.conf.json', {}, {
+    const responseObject = await axios.get(process.env.githubContentsURL + '/' + body.repository + '/contents/config.json', {}, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + process.env.token
@@ -36,7 +36,7 @@ const getFileDetails = async (body) => {
 const updateExistingFile = async (body) => {
     const filecontent = Buffer.from(JSON.stringify(body.content)).toString('base64');
 
-    const responseObject = await axios.put(process.env.githubContentsURL + '/' + body.repository + '/contents/quality.conf.json', {}, {
+    const responseObject = await axios.put(process.env.githubContentsURL + '/' + body.repository + '/contents/config.json', {}, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + process.env.token
