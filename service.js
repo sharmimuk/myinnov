@@ -10,7 +10,7 @@ const writeNewFile = (body) => {
             'Authorization': 'Bearer ' + process.env.token
         },
         data: {
-            "message": "Created quality.conf.json",
+            "message": "Created conf.json",
             "committer": {
                 "name": body.author,
                 "email": body.authorEmail
@@ -42,7 +42,7 @@ const updateExistingFile = async (body) => {
             'Authorization': 'Bearer ' + process.env.token
         },
         data: {
-            "message": "Updated quality.conf.json",
+            "message": "Updated conf.json",
             "committer": {
                 "name": body.author,
                 "email": body.authorEmail
